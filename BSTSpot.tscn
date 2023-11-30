@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqstul07eh0iy"]
+
+[ext_resource type="Texture2D" uid="uid://bqhx48o8vnydw" path="res://Circle.png" id="1_0b0s7"]
+[ext_resource type="Script" path="res://Scripts/BSTSpot.gd" id="1_21lcv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sw3x"]
+size = Vector2(120, 117.5)
+
+[node name="BSTSpot" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_21lcv")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.75)
+shape = SubResource("RectangleShape2D_3sw3x")
+
+[node name="Circle" type="Sprite2D" parent="."]
+modulate = Color(0.443137, 0.443137, 0.443137, 1)
+scale = Vector2(0.257, 0.257)
+texture = ExtResource("1_0b0s7")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

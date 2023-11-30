@@ -1,20 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://blorhg7du4ath"]
+[gd_scene load_steps=5 format=3 uid="uid://blorhg7du4ath"]
 
 [ext_resource type="Script" path="res://Scripts/DragAndDrop.gd" id="1_vnwqj"]
-[ext_resource type="Texture2D" uid="uid://txlr67kcs4mp" path="res://icon.svg" id="2_6jpm1"]
+[ext_resource type="Texture2D" uid="uid://bqhx48o8vnydw" path="res://Circle.png" id="2_mdk5u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxwo5"]
+radius = 59.0085
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufhl3"]
 size = Vector2(130, 130)
 
 [node name="StaticBody2D" type="StaticBody2D"]
-position = Vector2(293, 237)
+scale = Vector2(0.5, 0.5)
 input_pickable = true
 script = ExtResource("1_vnwqj")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CircleCollider" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_xxwo5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ufhl3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_6jpm1")
+visibility_layer = 3
+z_index = 1
+scale = Vector2(0.256667, 0.256667)
+texture = ExtResource("2_mdk5u")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
