@@ -1,3 +1,53 @@
-[gd_scene format=3 uid="uid://bspubedh4bg8k"]
+[gd_scene load_steps=3 format=3 uid="uid://bspubedh4bg8k"]
+
+[ext_resource type="PackedScene" uid="uid://bqstul07eh0iy" path="res://BSTSpot.tscn" id="1_h0nf2"]
+[ext_resource type="PackedScene" uid="uid://blorhg7du4ath" path="res://BSTNode.tscn" id="2_deyph"]
 
 [node name="Connor Test Scene" type="Node2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_deyph")]
+position = Vector2(448, 32)
+
+[node name="BST Spots" type="Node" parent="."]
+
+[node name="BSTSpot" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(224, 160)
+
+[node name="BSTSpot2" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(672, 160)
+
+[node name="BSTSpot3" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(96, 288)
+
+[node name="BSTSpot4" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(352, 288)
+
+[node name="BSTSpot5" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(544, 288)
+
+[node name="BSTSpot6" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(800, 288)
+
+[node name="BSTSpot7" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(32, 416)
+
+[node name="BSTSpot8" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(160, 416)
+
+[node name="BSTSpot9" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(288, 416)
+
+[node name="BSTSpot10" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(416, 416)
+
+[node name="BSTSpot11" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(480, 416)
+
+[node name="BSTSpot12" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(608, 416)
+
+[node name="BSTSpot13" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(736, 416)
+
+[node name="BSTSpot14" parent="BST Spots" instance=ExtResource("1_h0nf2")]
+position = Vector2(864, 416)
